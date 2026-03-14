@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lewiston Auburn Young Adult Group</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- TOP SECTION -->
+      <div id="top">
+        <div id="picture" aria-hidden="true"></div>
+        <div id="cross" aria-hidden="true"></div>
+        <div id="window" aria-hidden="true"></div>
+      </div>
+
+      <!-- BOTTOM SECTION -->
+      <div id="bottom">
+        <!-- Candle -->
+        <div id="candle" aria-hidden="true">
+          <img id="flame" src="./Images/candle.gif" alt="flame" />
+          <img
+            id="candle-stick-img"
+            src="./Images/candle_stick.PNG"
+            alt="candle stick"
+          />
+        </div>
+
+        <!-- Rosary -->
+        <img
+          id="rosary"
+          src="./Images/rosary.PNG"
+          alt="rosary"
+          aria-hidden="true"
+        />
+
+        <!-- Book container -->
+        <div id="book-container" class="book_normal">
+          <div id="book">
+            <img src="./Images/book.PNG" alt="old book" />
+            <div id="book-left">
+              <nav class="book-menu" aria-label="Book navigation">
+                <ul class="menu-list">
+                  <li>
+                    <button
+                      class="menu-btn"
+                      data-target="about"
+                      aria-controls="template-about"
+                      aria-expanded="false"
+                    >
+                      About Us
+                    </button>
+                  </li>
+
+                  <li>
+                    <button
+                      class="menu-btn"
+                      data-target="gallery"
+                      aria-controls="template-gallery"
+                      aria-expanded="false"
+                    >
+                      Gallery
+                    </button>
+                  </li>
+
+                  <li>
+                    <button
+                      class="menu-btn"
+                      data-target="contact"
+                      aria-controls="template-contact"
+                      aria-expanded="false"
+                    >
+                      Contact
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div
+              id="book-right"
+              role="region"
+              aria-labelledby="section-heading"
+            >
+              <div class="right-viewport">
+                <section id="about" class="template" data-template hidden>
+                  <h2 id="section-heading">About Us</h2>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Amet illo ut iusto quibusdam quod deserunt, rerum, eveniet,
+                    iure libero minus atque porro ullam totam laudantium est.
+                    Tempora minus culpa ipsum soluta laudantium. Aperiam,
+                    voluptate sequi. Ullam labore nobis ducimus, rerum animi
+                    iusto! Cum magni ea, accusantium tenetur, obcaecati
+                    consectetur, explicabo esse ducimus veritatis id
+                    reprehenderit fuga quaerat unde deleniti enim accusamus
+                    tempore! Doloribus error provident commodi! Amet distinctio
+                    sed tenetur exercitationem provident, doloremque fuga
+                    voluptatibus optio inventore accusamus quos officia
+                    architecto necessitatibus temporibus ducimus, magnam eveniet
+                    impedit perspiciatis? Iusto animi, id tempora nobis facilis
+                    neque atque quis laboriosam. Nihil, sunt?
+                  </p>
+                </section>
+
+                <section id="gallery" class="template" data-template hidden>
+                  <h2>Gallery</h2>
+                  <img
+                    src="./Images/Icons/x.svg"
+                    height="100px"
+                    width="100px"
+                  />
+                  <img
+                    src="./Images/Icons/x.svg"
+                    height="100px"
+                    width="100px"
+                  />
+                  <img
+                    src="./Images/Icons/x.svg"
+                    height="100px"
+                    width="100px"
+                  />
+                </section>
+
+                <section id="contact" class="template" data-template hidden>
+                  <h2>Contact</h2>
+                  <p>Contact content…</p>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book toggle -->
+          <div
+            id="book-toggle"
+            role="button"
+            aria-label="Toggle book visibility"
+            tabindex="0"
+          >
+            <img
+              id="hide"
+              class="eye"
+              src="./Images/Icons/hide.svg"
+              alt="hide book"
+            />
+            <img
+              id="show"
+              class="eye"
+              src="./Images/Icons/show.svg"
+              alt="show book"
+            />
+          </div>
+
+          <!-- Book close -->
+          <button id="book-close" aria-label="Close book">
+            <img src="./Images/Icons/x.svg" alt="close book" />
+          </button>
+        </div>
+
+        <!-- Music box -->
+        <div id="music-container">
+          <img id="music-box" src="./Images/music_box.PNG" alt="music box" />
+
+          <div id="track-label">
+            <img
+              id="track-icon"
+              src="./Images/Icons/music.svg"
+              alt="music icon"
+            />
+            <span id="track-title">Play me</span>
+          </div>
+
+          <button
+            id="play-toggle"
+            class="music-button"
+            aria-label="Play or pause music"
+          >
+            <img id="play" src="./Images/Icons/play.svg" alt="play" />
+            <img id="pause" src="./Images/Icons/pause.svg" alt="pause" />
+          </button>
+
+          <button id="skip" class="music-button" aria-label="Skip track">
+            <img src="./Images/Icons/skip.svg" alt="skip" />
+          </button>
+
+          <audio id="music-player" preload="auto"></audio>
+        </div>
+      </div>
+    </main>
+
+    <!-- Overlay layer -->
+    <div id="layer" aria-hidden="true"></div>
+  </body>
+</html>

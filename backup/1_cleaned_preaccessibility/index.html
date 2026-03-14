@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lewiston Auburn Young Adult Group</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- TOP SECTION -->
+      <div id="top">
+        <div id="picture" aria-hidden="true"></div>
+        <div id="cross" aria-hidden="true"></div>
+        <!-- kept for future use -->
+        <div id="window" aria-hidden="true"></div>
+      </div>
+
+      <!-- BOTTOM SECTION -->
+      <div id="bottom">
+        <!-- Candle -->
+        <div id="candle" aria-hidden="true">
+          <img id="flame" src="./Images/candle.gif" alt="flame" />
+          <img
+            id="candle-stick-img"
+            src="./Images/candle_stick.PNG"
+            alt="candle stick"
+          />
+        </div>
+
+        <!-- Rosary -->
+        <img
+          id="rosary"
+          src="./Images/rosary.PNG"
+          alt="rosary"
+          aria-hidden="true"
+        />
+
+        <!-- Book container -->
+        <div id="book-container" class="book_normal">
+          <div id="book">
+            <img src="./Images/book.PNG" alt="old book" />
+
+            <div id="book-pages">
+              <div class="page left"></div>
+              <div class="page right"></div>
+            </div>
+          </div>
+
+          <div id="book-toggle">
+            <img
+              id="hide"
+              class="eye"
+              src="./Images/Icons/hide.svg"
+              alt="hide book"
+            />
+            <img
+              id="show"
+              class="eye"
+              src="./Images/Icons/show.svg"
+              alt="show book"
+            />
+          </div>
+
+          <div id="book-close">
+            <img src="./Images/Icons/x.svg" alt="close book" />
+          </div>
+        </div>
+
+        <!-- Music box -->
+        <div id="music-container">
+          <img id="music-box" src="./Images/music_box.PNG" alt="music box" />
+
+          <div id="track-label">
+            <img
+              id="track-icon"
+              src="./Images/Icons/music.svg"
+              alt="music icon"
+            />
+            <span id="track-title">Play me</span>
+          </div>
+
+          <div id="play-toggle" class="music-button">
+            <img id="play" src="./Images/Icons/play.svg" alt="play" />
+            <img id="pause" src="./Images/Icons/pause.svg" alt="pause" />
+          </div>
+
+          <img
+            id="skip"
+            src="./Images/Icons/skip.svg"
+            class="music-button"
+            alt="skip"
+          />
+
+          <audio id="music-player" preload="auto"></audio>
+        </div>
+      </div>
+    </main>
+
+    <!-- Overlay layer -->
+    <div id="layer"></div>
+  </body>
+</html>

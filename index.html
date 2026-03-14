@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Lewiston Auburn Young Adult Group</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- TOP SECTION -->
+      <div id="picture" class="box" aria-hidden="true"></div>
+      <div id="cross" class="box" aria-hidden="true"></div>
+      <div id="window" class="box" aria-hidden="true"></div>
+
+      <!-- BOTTOM SECTION -->
+      <div id="bottom"></div>
+      <!-- Candle -->
+      <div id="candle" aria-hidden="true" aria-hidden="true">
+        <img id="flame" src="./Images/candle.gif" alt="flame" />
+        <img
+          id="candle-stick-img"
+          src="./Images/candlestick.PNG"
+          alt="candle stick"
+        />
+      </div>
+
+      <!-- Rosary -->
+      <img
+        id="rosary"
+        src="./Images/rosary.PNG"
+        alt="rosary"
+        aria-hidden="true"
+      />
+
+      <!-- Book container -->
+      <div id="book-container" class="book_normal">
+        <div id="book">
+          <img src="./Images/book.PNG" alt="old book" aria-hidden="true" />
+          <div id="book-left">
+            <nav class="book-menu" aria-label="Book navigation">
+              <ul class="menu-list">
+                <li>
+                  <button
+                    class="menu-btn"
+                    data-target="about"
+                    aria-controls="template-about"
+                    aria-pressed="true/false"
+                  >
+                    About Us
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    class="menu-btn"
+                    data-target="schedule"
+                    aria-controls="template-schedule"
+                    aria-pressed="true/false"
+                  >
+                    Schedule
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    class="menu-btn"
+                    data-target="gallery"
+                    aria-controls="template-gallery"
+                    aria-pressed="true/false"
+                  >
+                    Gallery
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    class="menu-btn"
+                    data-target="contact"
+                    aria-controls="template-contact"
+                    aria-pressed="true/false"
+                  >
+                    Contact
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    class="menu-btn"
+                    data-target="more"
+                    aria-controls="template-more"
+                    aria-pressed="true/false"
+                  >
+                    More
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div id="book-right" role="region" aria-live="polite">
+            <div class="right-viewport">
+              <section id="about" class="template" data-template hidden>
+                <h2 id="about-heading">About Us</h2>
+                <p>
+                  Welcome to LAYA! LAYA is a Catholic young adult group based at
+                  Prince of Peace Parish in Lewiston, Maine. Our goal is to
+                  create a fertile ground to form new relationships, get
+                  involved in the local community, and grow together in our
+                  Catholic faith. While rooted in the Catholic faith,
+                  individuals from all backgrounds often attend and are always
+                  invited. New faces are welcome and our typical ages range from
+                  18-35.
+                </p>
+
+                <p>
+                  LAYA meets every Thursday and rotates between social events,
+                  service projects, and learning more about the Church’s
+                  Tradition.
+                </p>
+
+                <p>
+                  If you think you might be interested in joining us, feel free
+                  to reach out through our contact page!
+                </p>
+              </section>
+
+              <section id="schedule" class="template" data-template hidden>
+                <h2 id="schedule-heading">Schedule</h2>
+                <p>Upcoming events...</p>
+              </section>
+
+              <section id="gallery" class="template" data-template hidden>
+                <h2 id="gallery-heading">Gallery</h2>
+                <button
+                  class="gallery-thumb"
+                  onclick="openGallery(this.querySelector('img').src)"
+                >
+                  <img
+                    src="./Images/Photos/01b.jpg"
+                    alt="Bowling group photo"
+                  />
+                </button>
+                <button
+                  class="gallery-thumb"
+                  onclick="openGallery(this.querySelector('img').src)"
+                >
+                  <img
+                    src="./Images/Photos/02g.jpg"
+                    alt="Game night group photo"
+                  />
+                </button>
+                <button
+                  class="gallery-thumb"
+                  onclick="openGallery(this.querySelector('img').src)"
+                >
+                  <img
+                    src="./Images/Photos/03at.jpg"
+                    alt="Axe-throwing group photo"
+                  />
+                </button>
+                <button
+                  class="gallery-thumb"
+                  onclick="openGallery(this.querySelector('img').src)"
+                >
+                  <img src="./Images/Photos/04d.jpg" alt="Dinner group photo" />
+                </button>
+              </section>
+
+              <section id="contact" class="template" data-template hidden>
+                <h2 id="contact-heading">Contact</h2>
+                <p>
+                  If you think you may be interested in joining us, feel free to
+                  contact us at:
+                </p>
+                <p>jmberrens2001@gmail.com</p>
+                <p>or through our parish at</p>
+                <p>pop.eco@portlanddiocese.org</p>
+                <p>
+                  You can also be added to our email list to keep you updated on
+                  upcoming events.
+                </p>
+              </section>
+              <section id="more" class="template" data-template hidden>
+                <h2 id="more-heading">More</h2>
+                <p>
+                  Keep a look out for more features and resources as we continue
+                  to grow!
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book toggle -->
+        <div
+          id="book-toggle"
+          role="button"
+          aria-label="Toggle book visibility"
+          tabindex="0"
+          aria-pressed="false"
+        >
+          <img
+            id="hide"
+            class="eye"
+            src="./Images/Icons/hide.svg"
+            alt="hide book"
+          />
+          <img
+            id="show"
+            class="eye"
+            src="./Images/Icons/show.svg"
+            alt="show book"
+          />
+        </div>
+
+        <!-- Book close -->
+        <button id="book-close" aria-label="Close book">
+          <img src="./Images/Icons/x.svg" alt="close book" />
+        </button>
+      </div>
+
+      <!-- Music box -->
+      <div id="music-container">
+        <img id="music-box" src="./Images/music_box.PNG" alt="music box" />
+
+        <div id="track-label">
+          <img
+            id="track-icon"
+            src="./Images/Icons/music.svg"
+            alt="music icon"
+          />
+          <span id="track-title" aria-live="polite">Play me</span>
+        </div>
+
+        <button
+          id="play-toggle"
+          class="music-button"
+          aria-label="Play or pause music"
+        >
+          <img id="play" src="./Images/Icons/play.svg" alt="play" />
+          <img id="pause" src="./Images/Icons/pause.svg" alt="pause" />
+        </button>
+
+        <button id="skip" class="music-button" aria-label="Skip track">
+          <img src="./Images/Icons/skip.svg" alt="skip" />
+        </button>
+
+        <audio id="music-player" preload="auto"></audio>
+      </div>
+
+      <!-- Overlay layer -->
+      <div id="layer" aria-hidden="true"></div>
+
+      <!-- Gallery Overlay -->
+      <div id="gallery-overlay" role="dialog" aria-modal="true" inert>
+        <img
+          id="gallery-image"
+          alt=""
+          aria-describedby="zoom-hint-desc"
+          tabindex="0"
+        />
+
+        <button id="gallery-close" aria-label="Close image">×</button>
+        <div id="zoom-hint" aria-label="hidden">Tap image to zoom</div>
+      </div>
+    </main>
+    <footer>
+      <a href="./accessibility-legal.html" target="_blank"
+        >Accessibility & Legal</a
+      >
+    </footer>
+  </body>
+</html>

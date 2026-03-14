@@ -1,0 +1,364 @@
+/* ---------------- UNIVERSAL ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(./Images/wallpaper.png) repeat;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  height: 100%;
+}
+
+/* ---------------- OVERLAY LAYER ---------------- */
+#layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ---------------- TOP SECTION ---------------- */
+#top {
+  display: flex;
+  justify-content: space-around;
+  min-height: 50%;
+}
+
+#top * {
+  width: 33%;
+}
+
+#picture {
+  background: url(./Images/joan.PNG) no-repeat center/contain;
+}
+
+#window {
+  background: url(./Images/window.PNG) no-repeat center;
+  background-size: 120% 120%;
+}
+
+/* ---------------- BOTTOM SECTION ---------------- */
+#bottom {
+  display: flex;
+  justify-content: space-between;
+  min-height: 50%;
+  background: url(./Images/table.PNG) no-repeat center/cover;
+}
+
+/* ---------------- CANDLE ---------------- */
+#candle {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  height: 45%;
+  width: fit-content;
+}
+
+#candle-stick-img {
+  height: 100%;
+}
+
+#flame {
+  position: absolute;
+  width: 30%;
+  top: -10%;
+  left: 37.5%;
+}
+
+/* ---------------- ROSARY ---------------- */
+#rosary {
+  position: absolute;
+  top: 62%;
+  left: 40%;
+  height: 36%;
+  width: fit-content;
+}
+
+/* ---------------- MUSIC BOX ---------------- */
+#music-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  height: 50vh;
+  width: auto;
+  max-width: 100vw;
+  display: inline-block;
+}
+
+#music-box {
+  height: 100%;
+  width: auto;
+  display: block;
+  max-width: 100%;
+}
+
+#track-label {
+  color: beige;
+  position: absolute;
+  bottom: 75%;
+  left: 57%;
+  transform: translateX(-50%);
+  font-size: clamp(12px, 2.3vh, 24px);
+  pointer-events: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+#track-icon {
+  height: 1.5em;
+  width: auto;
+}
+
+.music-button {
+  z-index: 2;
+  height: 8%;
+  width: auto;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+#play-toggle {
+  position: absolute;
+  bottom: 33%;
+  left: 36%;
+}
+
+#play-toggle img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#play-toggle img#play {
+  display: block;
+}
+
+#play-toggle img#pause {
+  display: none;
+}
+
+#skip {
+  position: absolute;
+  bottom: 30%;
+  left: 51%;
+}
+
+#skip img {
+  height: 100%;
+  width: auto;
+}
+
+/* ---------------- BOOK ---------------- */
+#book-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+  width: auto;
+  max-width: 100vw;
+  overflow: hidden;
+  transition: height 1s ease;
+}
+
+#book {
+  height: 100%;
+  width: auto;
+  display: block;
+  pointer-events: auto;
+  z-index: 5;
+}
+
+#book > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+#book-left {
+  position: absolute;
+  height: 43%;
+  top: 20%;
+  left: 20%;
+  width: 27%;
+  z-index: 6;
+}
+
+/* ---------- BOOK LEFT MENU ---------- */
+.book-menu {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8%;
+
+  width: 100%;
+  height: 100%;
+}
+
+.menu-list li {
+  flex: 1 1;
+  width: 80%;
+}
+
+.menu-btn {
+  width: 100%;
+  height: 60%;
+
+  font-size: clamp(0.8rem, 2.2vh, 1.2rem);
+  font-family: inherit;
+
+  background: rgba(149, 131, 100, 0.85);
+  border: none;
+  border-radius: 0.2em;
+  opacity: 0.75;
+
+  cursor: pointer;
+}
+
+.menu-btn:focus-visible {
+  outline: 3px solid #5a3;
+  outline-offset: 2px;
+}
+
+.menu-btn:hover {
+  background: rgba(144, 137, 126, 0.85);
+}
+
+/* -----------BOOK RIGHT---------- */
+
+#book-right {
+  position: absolute;
+  top: 20%;
+  left: 52%;
+  width: 24%;
+  height: 43%;
+  z-index: 6;
+  overflow: hidden;
+  font-size: clamp(0.2rem, 1.6vh, 1.2rem);
+}
+
+.right-viewport {
+  height: 100%;
+  width: 100%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 0.75em;
+
+  scrollbar-gutter: stable;
+}
+
+.template {
+  text-align: center;
+}
+
+#book .template img {
+  min-height: auto;
+  height: 10vh;
+  max-height: 200px;
+  max-width: 100%;
+}
+
+#book-toggle {
+  position: absolute;
+  bottom: 17%;
+  left: 15%;
+  display: flex;
+  height: 15%;
+  width: auto;
+  z-index: 5;
+  pointer-events: auto;
+}
+
+.eye {
+  width: 100%;
+  height: 100%;
+}
+
+#show {
+  display: none;
+}
+
+#hide {
+  display: block;
+}
+
+/* BOOK STATES */
+.book_normal {
+  height: 52vh;
+}
+
+.book_expanded {
+  height: 100vh;
+  max-height: 150vw;
+}
+
+#book-container.book-hidden #book {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#book-container.book-hidden #book-pages {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+#book-container:not(.book-hidden) #book-pages {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#book-close {
+  position: absolute;
+  top: 10%;
+  right: 24%;
+  height: 6%;
+  width: ;
+  z-index: 7;
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  pointer-events: auto;
+}
+
+#book-close img {
+  height: 100%;
+  width: auto;
+}
+
+#book-container.book_expanded #book-close {
+  display: block;
+}

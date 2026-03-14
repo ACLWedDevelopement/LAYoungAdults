@@ -1,0 +1,304 @@
+/* ---------------- UNIVERSAL ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(./Images/wallpaper.png) repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+}
+
+/* ---------------- OVERLAY LAYER ---------------- */
+#layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ---------------- TOP SECTION ---------------- */
+#top {
+  display: flex;
+  justify-content: space-around;
+  min-height: 50%;
+}
+
+#top * {
+  width: 33%;
+}
+
+#picture {
+  background: url(./Images/joan.PNG) no-repeat center/contain;
+}
+
+#window {
+  background: url(./Images/window.PNG) no-repeat center;
+  background-size: 120% 120%;
+}
+
+/* ---------------- BOTTOM SECTION ---------------- */
+#bottom {
+  display: flex;
+  justify-content: space-between;
+  min-height: 50%;
+  background: url(./Images/table.PNG) no-repeat center/cover;
+}
+
+/* ---------------- CANDLE ---------------- */
+#candle {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  height: 45%;
+  width: fit-content;
+}
+
+#candle-stick-img {
+  height: 100%;
+}
+
+#flame {
+  position: absolute;
+  width: 30%;
+  top: -10%;
+  left: 37.5%;
+}
+
+/* ---------------- ROSARY ---------------- */
+#rosary {
+  position: absolute;
+  top: 62%;
+  left: 40%;
+  height: 36%;
+  width: fit-content;
+}
+
+/* ---------------- MUSIC BOX ---------------- */
+#music-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  height: 50vh;
+  width: auto;
+  max-width: 100vw;
+  display: inline-block;
+}
+
+#music-box {
+  height: 100%;
+  width: auto;
+  display: block; /* removes inline whitespace */
+  max-width: 100%;
+}
+
+#track-label {
+  color: beige;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  position: absolute;
+  bottom: 75%;
+  left: 57%;
+  transform: translateX(-50%);
+
+  font-size: clamp(12px, 2.3vh, 24px);
+  font-family: serif;
+
+  pointer-events: none; /* clicks pass through */
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.25em; /* space between icon and text */
+}
+
+#track-title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#track-icon {
+  height: 1.5em;
+  width: auto; /* matches roughly one character of text */
+}
+
+.music-button {
+  z-index: 2;
+  height: 8%;
+  width: auto;
+  cursor: pointer;
+}
+
+#play-toggle {
+  position: absolute;
+  bottom: 33%;
+  left: 36%;
+}
+
+#play-toggle img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#play-toggle img {
+  display: none;
+}
+
+#play-toggle img#play {
+  display: block;
+}
+
+#skip {
+  position: absolute;
+  bottom: 30%;
+  left: 51%;
+}
+
+#play {
+  display: block;
+}
+
+#pause {
+  display: none;
+}
+
+/* ---------------- BOOK ---------------- */
+#book-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+
+  pointer-events: none;
+
+  width: auto;
+  max-width: 100vw;
+  overflow: hidden;
+  transition: height 1s ease;
+}
+
+#book {
+  height: 100%; /* critical */
+  width: auto;
+  display: block;
+  pointer-events: auto;
+
+  border: white 1px solid;
+}
+
+#book img {
+  display: block; /* removes inline gaps */
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.book-page {
+  position: absolute;
+  border: blue 2px dotted;
+  z-index: 6;
+}
+
+#book-left {
+  height: 43%;
+  top: 20%;
+  left: 22%;
+  width: 25%;
+}
+
+#book-right {
+  top: 20%;
+  left: 52%;
+  width: 24%;
+  height: 43%;
+}
+
+#book-toggle {
+  position: absolute;
+  bottom: 17%;
+  left: 15%;
+  display: flex;
+  height: 15%;
+  width: auto;
+  z-index: 5;
+
+  pointer-events: auto;
+}
+
+.eye {
+  width: 100%;
+  height: 100%;
+}
+
+#show {
+  display: none;
+}
+
+#hide {
+  display: block;
+}
+
+/* BOOK STATES */
+
+/* normal state */
+.book_normal {
+  height: 52vh;
+}
+
+/* expanded state */
+.book_expanded {
+  height: 100vh; /* expand to full viewport height */
+  max-height: 1.5 * 100vw; /* cap height to 150% of width */
+}
+
+#book-container.book-hidden #book {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* When book is hidden */
+#book-container.book-hidden #book-pages {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* When book is shown */
+#book-container:not(.book-hidden) #book-pages {
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* or auto if needed */
+}
+
+#book-close img {
+  height: 100%;
+  width: auto;
+}
+
+/* Only show X when expanded */
+#book-container.book_expanded #book-close {
+  display: block;
+}
+/* Close (X) button */
+#book-close {
+  position: absolute;
+  top: 10%;
+  right: 24%;
+  height: 6%;
+  width: auto;
+  z-index: 7;
+
+  display: none; /* hidden by default */
+  cursor: pointer;
+
+  pointer-events: auto;
+}
