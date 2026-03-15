@@ -47,7 +47,7 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(./Images/joan.PNG) no-repeat center/contain;
+  background: url(./Images/joan.png) no-repeat center/contain;
 }
 
 #cross {
@@ -61,7 +61,7 @@ p {
   position: absolute;
   top: 0;
   left: 66vw;
-  background: url(./Images/window.PNG) no-repeat center;
+  background: url(./Images/window.png) no-repeat center;
   background-size: 120% 120%;
 }
 
@@ -78,7 +78,7 @@ p {
   z-index: 1;
   height: 50vh;
   width: 100vw;
-  background: url(./Images/table.PNG) no-repeat center/cover;
+  background: url(./Images/table.png) no-repeat center/cover;
 }
 
 /* ---------------- CANDLE ---------------- */
