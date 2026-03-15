@@ -1,7 +1,7 @@
 // ---------- PLAYLIST ----------
 const playlist = [
-  { src: "./audio/1_ave_maria.mp3", title: "Ave Maria" },
-  { src: "./audio/2_the_good_song.mp3", title: "The Good Song" },
+  { src: "./Audio/1_ave_maria.mp3", title: "Ave Maria" },
+  { src: "./Audio/2_the_good_song.mp3", title: "The Good Song" },
 ];
 
 let currentTrack = 0;
